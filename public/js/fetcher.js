@@ -22,6 +22,7 @@ const messageCard = (message) => {
 
 const appendMessages = (messages = []) => {
   const messagesContainer = document.getElementById('messages');
+  messagesContainer.innerHTML = "";
   messages.forEach((message) => messagesContainer.appendChild(messageCard(message)))
 }
 

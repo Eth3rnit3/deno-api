@@ -8,8 +8,9 @@ form.addEventListener('submit', (event) => {
     const picture = localStorage.getItem('picture');
     axios.post('api/messages', { body, username, picture })
     .then(res => {
-      appendMessages([res.data]);
+      // appendMessages([res.data]);
       form.reset();
+      ws.send("new_message");
     })
     .catch(err => console.error(err))
   }
