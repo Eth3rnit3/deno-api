@@ -1,0 +1,31 @@
+#messages {
+  max-height: 90vh;
+  overflow: scroll;
+}
+
+.message-card {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 0;
+}
+.message-card > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+.message-card > div > img {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+}
+
+.is-me {
+  border-color: greenyellow;
+  margin-left: 30px;
+}

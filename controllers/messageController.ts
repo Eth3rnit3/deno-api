@@ -4,6 +4,8 @@ const messagesCol = db.collection("messages");
 
 interface IMessageParams {
   body: string;
+  username: string;
+  picture: string;
 }
 
 interface IMessage {
@@ -11,6 +13,8 @@ interface IMessage {
     $oid: string;
   };
   body: string;
+  username: string;
+  picture: string;
 }
 
 export const index = async (context: Context) => {
@@ -26,8 +30,8 @@ export const show = async (context: Context) => {
 }
 export const create = async (context: Context) => {
   const bodyParams: IMessageParams = await context.body();
-  const { body } = bodyParams;
-  const messageId = await messagesCol.insertOne({ body });
+  const { body, username, picture } = bodyParams;
+  const messageId = await messagesCol.insertOne({ body, username, picture });
   const message: IMessage = await messagesCol.findOne({ _id: messageId });
   context.json(message, 201)
 }

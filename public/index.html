@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8"/>
-        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
-        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
 
-        <title>Deno Express Start Page</title>
+    <title>Deno Chat App</title>
 
-        <!-- Required Stylesheets -->
-        <link href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    </head>
-    <body>
-        <!-- Our application root element -->
-        <div id="app">
+    <!-- Required Stylesheets -->
+    <link href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/username.js"></script>
+  </head>
+  <body>
+    <!-- Our application root element -->
+    <div id="app">
+      <div class="container">
+        <div class="row mt-5">
+          <div class="col-6">
+            <form id="form-message">
+              <label for="message-input">
+                Message :
+                <input id="message-input" name="message-input" type="text">
+              </label>
+              <button type="submit">Envoyer</button>
+            </form>
+          </div>
+          <div class="col-6">
+            <div id="messages">
 
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <!-- Start running your app -->
-        <script>
-
-        </script>
-    </body>
+    <script src="./js/fetcher.js"></script>
+    <script src="./js/creator.js"></script>
+  </body>
 </html>
