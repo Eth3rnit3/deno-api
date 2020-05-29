@@ -15,5 +15,5 @@ ws.onopen = function () {
 
 ws.onmessage = function (evt) {
   console.log(evt);
-  fetchMessages()
+  fetchMessages();
 }

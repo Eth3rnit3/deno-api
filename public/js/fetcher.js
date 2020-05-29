@@ -24,6 +24,7 @@ const appendMessages = (messages = []) => {
   const messagesContainer = document.getElementById('messages');
   messagesContainer.innerHTML = "";
   messages.forEach((message) => messagesContainer.appendChild(messageCard(message)))
+  document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;
 }
 
 const fetchMessages = () => {

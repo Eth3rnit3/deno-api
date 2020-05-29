@@ -12,7 +12,7 @@ function broadcast(message: string, senderId?: string): void {
   }
 }
 
-const hello: HandlerFunc = async (c) => {
+const wsHandler: HandlerFunc = async (c) => {
   const { conn, headers, r: bufReader, w: bufWriter } = c.request;
   try {
     const sock = await acceptWebSocket({
@@ -28,7 +28,6 @@ const hello: HandlerFunc = async (c) => {
     // Register user connection
     users.set(userId, sock)
     broadcast(`> User with the id ${userId} is connected`)
-
 
     try {
       for await (const ev of sock) {
@@ -64,6 +63,6 @@ const hello: HandlerFunc = async (c) => {
   }
 };
 
-app.get("/ws", hello).file("/", "./index.html");
+app.get("/ws", wsHandler).file("/", "./index.html");
 
 export default app;
