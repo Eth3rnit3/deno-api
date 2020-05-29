@@ -1,5 +1,6 @@
 import { Application } from "https://deno.land/x/abc/mod.ts";
 import { messageRouter } from "./routes/messageRouter.ts";
+import wsHandler from "./ws-server.ts";
 
 const app = new Application;
 
@@ -8,6 +9,7 @@ app
   .static("/css", "./public/css")
 
 app.get("/", async ctx => await ctx.file('./public/index.html'));
+app.get("/ws", wsHandler);
 
 messageRouter(app);
 

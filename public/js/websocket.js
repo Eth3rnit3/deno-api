@@ -6,7 +6,6 @@ if (loc.protocol === "https:") {
 }
 uri += "//" + loc.host;
 uri += loc.pathname + "ws";
-uri = uri.replace('3000', '8080')
 const ws = new WebSocket(uri);
 
 ws.onopen = function () {

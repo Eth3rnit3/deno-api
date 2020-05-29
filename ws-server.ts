@@ -1,8 +1,7 @@
-import { Application, HandlerFunc } from "https://deno.land/x/abc/mod.ts";
+import { HandlerFunc } from "https://deno.land/x/abc/mod.ts";
 import { acceptWebSocket, isWebSocketCloseEvent, isWebSocketPingEvent, WebSocket } from "https://deno.land/std@0.53.0/ws/mod.ts";
 import { v4 } from 'https://deno.land/std/uuid/mod.ts'
 
-const app = new Application();
 const users = new Map<string, WebSocket>();
 
 function broadcast(message: string, senderId?: string): void {
@@ -63,6 +62,4 @@ const wsHandler: HandlerFunc = async (c) => {
   }
 };
 
-app.get("/ws", wsHandler).file("/", "./index.html");
-
-export default app;
+export default wsHandler;
