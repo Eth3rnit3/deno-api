@@ -1,4 +1,4 @@
-import { Application } from "https://deno.land/x/abc/mod.ts";
+import { Application } from "./deps.ts";
 import { messageRouter } from "./routes/messageRouter.ts";
 import wsHandler from "./ws-server.ts";
 

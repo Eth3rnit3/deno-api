@@ -1,4 +1,4 @@
-import { Application } from "https://deno.land/x/abc/mod.ts";
+import { Application } from "../deps.ts";
 import { index, create, show, update, destroy } from "../controllers/messageController.ts";
 
 export const messageRouter = (app: Application) => {

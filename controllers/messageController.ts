@@ -1,4 +1,4 @@
-import { Context } from "https://deno.land/x/abc/mod.ts";
+import { Context } from "../deps.ts";
 import { db } from "../config/db.ts";
 const messagesCol = db.collection("messages");
 
