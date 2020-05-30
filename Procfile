@@ -1,1 +1,1 @@
-web: deno run --allow-env --allow-write --allow-read --allow-plugin --unstable server.ts
+web: deno run --allow-env --allow-write --allow-read --allow-plugin server.ts --unstable
